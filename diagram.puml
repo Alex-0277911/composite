@@ -1,0 +1,48 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "dart_composite::composite_weather.dart::WeatherComponent" {
+  +void add()
+  +void remove()
+  +void display()
+}
+
+class "dart_composite::composite_weather.dart::WeatherStation" {
+  -String _name
+  -List<WeatherComponent> _weatherComponents
+  +void add()
+  +void remove()
+  +void display()
+}
+
+"dart_composite::composite_weather.dart::WeatherComponent" <|-- "dart_composite::composite_weather.dart::WeatherStation"
+
+class "dart_composite::composite_weather.dart::Temperature" {
+  -double _temperature
+  +void add()
+  +void remove()
+  +void display()
+}
+
+"dart_composite::composite_weather.dart::WeatherComponent" <|-- "dart_composite::composite_weather.dart::Temperature"
+
+class "dart_composite::composite_weather.dart::Humidity" {
+  -double _humidity
+  +void add()
+  +void remove()
+  +void display()
+}
+
+"dart_composite::composite_weather.dart::WeatherComponent" <|-- "dart_composite::composite_weather.dart::Humidity"
+
+class "dart_composite::composite_weather.dart::Wind" {
+  -double _windSpeed
+  +void add()
+  +void remove()
+  +void display()
+}
+
+"dart_composite::composite_weather.dart::WeatherComponent" <|-- "dart_composite::composite_weather.dart::Wind"
+
+
+@enduml
